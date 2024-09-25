@@ -137,7 +137,7 @@ RcloneSyncAdd()
         ExitOnText "输入同步的本地目录" rclone_sync_target RcloneSyncLocalValidator "路径错误"
         RemoveQuotes rclone_sync_target
     else
-        rclone_sync_target="${rclone_sync_target_options[rclone_sync_target_options_index-1]}"
+        rclone_sync_target="${rclone_sync_target_options[rclone_sync_target_options_index]}"
         echo
         ExitOnText "输入同步目标 $rclone_sync_target 的路径" rclone_sync_target_path
         rclone_sync_target="$rclone_sync_target:$rclone_sync_target_path"
@@ -336,7 +336,7 @@ RcloneSyncEdit()
                 ExitOnText "输入同步的本地目录" rclone_sync_target RcloneSyncLocalValidator "路径错误"
                 RemoveQuotes rclone_sync_target
             else
-                rclone_sync_target="${rclone_sync_target_options[rclone_sync_target_options_index-1]}"
+                rclone_sync_target="${rclone_sync_target_options[rclone_sync_target_options_index]}"
                 echo
                 ExitOnText "输入同步目标 $rclone_sync_target 的路径" rclone_sync_target_path
                 rclone_sync_target="$rclone_sync_target:$rclone_sync_target_path"

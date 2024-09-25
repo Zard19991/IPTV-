@@ -1,0 +1,15 @@
+TestInquirerValidator()
+{
+    if [ "$1" == "$i18n_cancel" ] || [[ "$1" =~ ^[0-9]+$ ]]
+    then
+        return 0
+    fi
+
+    return 1
+}
+
+TestInquirer()
+{
+    Println "$tip 输入非数字会提示错误"
+    inquirer text_input "测试输入 validator" user_input "$i18n_cancel" TestInquirerValidator "请输入数字"
+}
